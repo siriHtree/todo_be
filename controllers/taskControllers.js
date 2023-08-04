@@ -20,7 +20,9 @@ export const fetchTasks=async(req,res)=>{
 
 export const createTask=async(req,res)=>{
     try{
-        console.log(req.body);
+        // console.log(req.body);
+        let tData=await Tasks.create(req.body);
+        // console.log(tData)
         return res.status(200).json({
             status:'created'
         })
